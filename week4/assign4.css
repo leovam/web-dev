@@ -1,0 +1,54 @@
+body {
+    background-color: lightblue;
+}
+
+h2 {
+    color: red;
+    font-size: 40px;
+    text-align: center;
+}
+
+table,
+tr,
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+#table1 {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#img1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#header1 {
+    background-color: grey;
+    font-size: 18px;
+    color: white;
+}
+
+
+#goldtd {
+    background-color: gold
+}
+
+#silvertd {
+    background-color: silver
+}
+
+#bronzetd {
+    background-color: brown;
+}
+
+.layout {
+    display:block;
+    color: blue;
+    margin-left:15%;
+}
