@@ -4,18 +4,129 @@
 
 <head>
 
-    <title></title>
+    <title>Protect ocean animals</title>
+    <style>
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+        
+        .yellow-text {
+            color: yellow;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function validateFirstname() {
+            var fName = document.getElementById("firstName").value;
+            var re1 = /^[a-zA-Z\s\'\-]{2,15}$/;
+            if (re1.test(fName)) {
+                document.getElementById("firstNamePrompt").style.color = "yellow";
+                document.getElementById("firstNamePrompt").innerHTML = "<strong>valid</strong>";
+                return true;
+
+            } else {
+                document.getElementById("firstNamePrompt").style.color = "Red";
+                document.getElementById("firstNamePrompt").innerHTML = "<strong>Enter 2-15 characters</strong>";
+                return false;
+            }
+        }
+
+        function validateLasttname() {
+            var lName = document.getElementById("lastName").value;
+            var re2 = /^[a-zA-Z\s\'\-']{2,25}$/;
+            if (re2.test(lName)) {
+                document.getElementById("lastNamePrompt").style.color = "yellow";
+                document.getElementById("lastNamePrompt").innerHTML = "<strong>valid</strong>";
+                return true;
+
+            } else {
+                document.getElementById("lastNamePrompt").style.color = "Red";
+                document.getElementById("lastNamePrompt").innerHTML = "<strong>Enter 2-25 characters</strong>";
+                return false;
+            }
+        }
+
+        function clicked() {
+            alert("Thanks for your support!");
+            return true;
+        }
+    </script>
 
 </head>
 
 <body>
-    <form>
-        First name:<br>
-        <input type="text" name="first name"><br>
+    <div class="container">
+        <div class="top-left">
+            <h2 class="yellow-text">Let's protect ocean animals!</h2>
+        </div>
+        <img src="https://api.time.com/wp-content/uploads/2019/11/great-whale.jpg?quality=85&w=1200&h=628&crop=1" , width="100%">
+        <div class="centered">
+            <form>
+                <table>
+                    <tr>
+                        <td class="yellow-text"><strong>First name:</strong> </td>
+                        <td><input type="text" name="firstName" id="firstName" onblur="validateFirstname();" /></td>
+                        <td><span id="firstNamePrompt"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="yellow-text">Last name: </td>
+                        <td><input type="text" name="lastName" id="lastName" onblur="validateLasttname();" /></td>
+                        <td><span id="lastNamePrompt"></span></td>
+                    </tr>
+                    <tr>
+                        <td class='yellow-text'>Phone number: </td>
+                        <td><input type="text" name="phonenumber"></td>
+                        <td><span>xxx-xxx-xxxx</span></td>
+                    </tr>
+                    <tr>
+                        <td class='yellow-text'>Email: </td>
+                        <td><input type="text" name="email"></td>
+                        <td><span>user@domain.com</span></td>
+                    </tr>
 
-        <input type="submit" value="Submit">
-    </form>
 
+                    <tr><textarea rows="4" cols="50" placeholder="please share your experience of protecting ocean animals here..."></textarea>
+                    </tr>
+                    <tr>
+                        <td class='yellow-text'>Preferred contact: </td>
+                        <td class='yellow-text'><input type="radio" name="prefer">Phone
+                            <input type="radio" name="prefer">Email
+                            </tdclass='yellow-text'>
+
+                    </tr>
+                    <tr>
+                        <td class='yellow-text'>Donation: </td>
+                        <td class='yellow-text'><input type="radio" name="donate">$0
+                            <input type="radio" name="donate">$5
+                            <input type="radio" name="donate">$10
+                            <input type="radio" name="donate">$20
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Submit" onclick="clicked()"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
 
 </body>
 
