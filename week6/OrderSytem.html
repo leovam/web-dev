@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Order Your Food For Delivery!</title>
+    <link rel="stylesheet" type="text/css" href="assign6.css">
+    <script src="assign6.js"></script>
+
+</head>
+
+<body>
+
+    <img id="bg" src="https://spanishsabores.com/wp-content/uploads/2018/12/Macarons-in-Paris-.jpg" alt="" />
+    <div class="centered">
+        <form>
+            <!-- basic information of the customer for delivery-->
+            <table>
+                <tr>
+                    <td id="blackbold">First name: </td>
+                    <td><input type="text" name="firstName" id="firstName" onblur="validateFirstname();" /></td>
+                    <td><span id="firstNamePrompt"></span></td>
+                </tr>
+
+                <tr>
+                    <td id="blackbold">Last name: </td>
+                    <td><input type="text" name="lastName" id="lastName" onblur="validateLasttname();" /></td>
+                    <td><span id="lastNamePrompt"></span></td>
+                </tr>
+                <tr>
+                    <td id="blackbold">Phone number: </td>
+                    <td><input type="text" name="phone" id="phone" placeholder="xxx-xxx-xxxx" onblur="validatephone()"></td>
+                    <td><span id="phonePrompt"></span></td>
+                </tr>
+
+                <tr>
+                    <td id="blackbold">Address: </td>
+                    <td><input type="text" name="address" id="address"></td>
+
+                </tr>
+
+
+
+            </table>
+            <!-- provide the food the customer can choose-->
+            <p id="blackbold4">Choose your food ($2 delivery fee will be applied for any order less than $18):
+
+                <table>
+
+
+                    <tr>
+                        <td id="blackbold2">Appetizer ($5): </td>
+                        <td id="blackbold2">Entree ($10): </td>
+                        <td id="blackbold2">Dessert ($4): </td>
+                    </tr>
+                    <tr>
+                        <td id="blackbold3">
+                            <input name="food" value="5.00" type="checkbox" data-valuetwo="Guacamole" onclick="totalIt()" />Guacamole
+                        </td>
+
+                        <td id="blackbold3">
+                            <input name="food" value="10.00" type="checkbox" data-valuetwo="Morcilla" onclick="totalIt()" />Morcilla
+                        </td>
+
+                        <td id="blackbold3">
+                            <input name="food" value="4.00" type="checkbox" data-valuetwo="Apricot Nectar Cake" onclick="totalIt()" />Apricot Nectar Cake
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="blackbold3">
+                            <input name="food" value="5.00" type="checkbox" data-valuetwo="Jalapeno Popper Spread" onclick="totalIt()" />Jalapeno Popper Spread
+                        </td>
+
+                        <td id="blackbold3">
+                            <input name="food" value="10.00" type="checkbox" data-valuetwo="Easy Baked Fish Fillets" onclick="totalIt()" />Easy Baked Fish Fillets
+                        </td>
+
+                        <td id="blackbold3">
+                            <input name="food" value="4.00" type="checkbox" data-valuetwo="Hard Liquor Balls" onclick="totalIt()" />Hard Liquor Balls
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="blackbold3">
+                            <input name="food" value="5.00" type="checkbox" data-valuetwo="Double Tomato Bruschetta" onclick="totalIt()" />Double Tomato Bruschetta
+                        </td>
+
+                        <td id="blackbold3">
+                            <input name="food" value="10.00" type="checkbox" data-valuetwo="Ahi Tuna Poke Pizza" onclick="totalIt()" />Ahi Tuna Poke Pizza
+                        </td>
+
+                        <td id="blackbold3">
+                            <input name="food" value="4.00" type="checkbox" data-valuetwo="Pink Pancakes" onclick="totalIt()" />Pink Pancakes
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="blackbold3">
+                            <input name="food" value="5.00" type="checkbox" data-valuetwo="Seven Layer Taco Dip" onclick="totalIt()" />Seven Layer Taco Dip
+                        </td>
+
+                        <td id="blackbold3">
+                            <input name="food" value="10.00" type="checkbox" data-valuetwo="Picanha" onclick="totalIt()" />Picanha
+                        </td>
+
+                        <td id="blackbold3">
+                            <input name="food" value="4.00" type="checkbox" data-valuetwo="Gateu De Nancy" onclick="totalIt()" />Gateu De Nancy
+                        </td>
+                    </tr>
+                </table>
+                <!-- calculate the total order-->
+                <p id="blackbold4">Total order ($):</p>
+                <p id="blackbold4"><input value="0.00" readonly="" type="text" id="total" /></p>
+                <p id="blackbold4">Tips:
+                    <input type="radio" value="0.1" name="tips">10%
+                    <input type="radio" value="0.15" name="tips" checked="checked">15%
+                    <input type="radio" value="0.18" name="tips">18%</p><br>
+
+                <!-- calculate the total order plus tip and tax and delivery fee (if any)-->
+                <button type="button" onclick="totalPrice()">Show total price</button><br>
+                <p class="blackbold4" id="totalP"></p>
+        <textarea rows="4" cols="80" placeholder="Please provide any other information we need to know here, such as introdution of delivery ... "></textarea>
+        <table>
+        <tr>
+        <td>
+        <input type="button" class="button" onclick="orderSum()" value="Order Now!">
+        </td>
+        </tr>
+        </table>
+        </form>
+        
+
+    </div>
+
+</body>
+
+</html>
